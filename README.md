@@ -41,6 +41,7 @@ This assignment evaluates your skills in:
 You'll build a simple chat interface that allows users to query job and salary information stored in JSON files. Think of it as a basic HR assistant that can answer questions about job descriptions and compensation. The interface doesn't have to be anything fancy.
 
 ### Note on Scale
+
 The included JSON datasets are intentionally small to keep this take-home manageable and avoid overwhelm. However, **please design your approach as if the datasets could grow significantly** (e.g., 10×–100× more records).
 We’re looking for evidence that your solution would remain efficient and maintainable as data grows—**without requiring you to build a full production system**. If you choose a simpler approach given time constraints, explain how you would scale it in your writeup.
 
