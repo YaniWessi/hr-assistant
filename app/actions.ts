@@ -1,6 +1,8 @@
+"use server";
+
 import Anthropic from "@anthropic-ai/sdk";
-import { loadJobData } from "../../../lib/data";
-import type { JobRecord } from "../../../lib/types";
+import { loadJobData } from "../lib/data";
+import type { JobRecord } from "../lib/types";
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -9,9 +11,7 @@ function scoreRecord(record: JobRecord, messageWords: string[]): number {
   return messageWords.filter((word) => haystack.includes(word)).length;
 }
 
-export async function POST(req: Request) {
-  const { message } = await req.json();
-
+export async function sendMessage(message: string): Promise<string> {
   const allJobs = loadJobData();
 
   const messageWords = message.toLowerCase().split(/\s+/).filter(Boolean);
@@ -42,10 +42,5 @@ export async function POST(req: Request) {
     messages: [{ role: "user", content: message }],
   });
 
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
-
-  return new Response(text, {
-    headers: { "Content-Type": "text/plain" },
-  });
+  return response.content[0].type === "text" ? response.content[0].text : "";
 }
