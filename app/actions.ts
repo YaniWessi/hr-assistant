@@ -36,7 +36,7 @@ export async function sendMessage(message: string): Promise<string> {
       : "You are an HR assistant. You do not have data matching the user's query. Nicely let them know.";
 
   const response = await client.messages.create({
-    model: "claude-3-5-haiku-20241022",
+    model: "claude-haiku-4-5-20251001",
     max_tokens: 1024,
     system: systemPrompt,
     messages: [{ role: "user", content: message }],
