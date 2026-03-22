@@ -1,4 +1,4 @@
-# HR Assistant
+# HR Assistant (Ai helped me polish my readme)
 
 A chat interface for querying job descriptions and salary information across California county jurisdictions.
 
@@ -40,4 +40,4 @@ For the LLM call I used a Next.js server action. The system prompt adapts based 
 
 ## What was AI assisted
 
-AI helped with parts of the implementation — the data layer (types, file loading, join logic), the server action (scoring, filtering, prompt building, API call), and the chat UI (state management, form handling). The architecture decisions, filtering approach, how to structure the prompt, and the overall direction were mine. I reviewed and understood everything before committing it.
+AI helped with parts of the implementation the data layer (types, file loading, join logic), the server action (scoring, filtering, prompt building, API call), and the chat UI (state management, form handling). The architecture decisions, filtering approach, how to structure the prompt, and the overall direction were mine. I reviewed and understood everything before committing it.
