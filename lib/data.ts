@@ -7,6 +7,8 @@ const SALARY_GRADE_KEYS = Array.from(
   (_, i) => `Salary grade ${i + 1}` as keyof RawSalaryRecord,
 );
 
+// AI helped me with finishing this script to reads two JSON files, builds a Map for O(1) joins,
+// merges salary grades onto each job, filters empty grades, return jobrecords
 export function loadJobData(): JobRecord[] {
   const dataDir = path.join(process.cwd(), "data");
 

@@ -11,6 +11,8 @@ function scoreRecord(record: JobRecord, messageWords: string[]): number {
   return messageWords.filter((word) => haystack.includes(word)).length;
 }
 
+// Used AI to help me with this script to scores all records, filters and sorts matches,
+// formats context block, builds system prompt, calls Claude, returns reply
 export async function sendMessage(message: string): Promise<string> {
   const allJobs = loadJobData();
 

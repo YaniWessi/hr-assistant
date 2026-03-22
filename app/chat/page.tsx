@@ -15,6 +15,8 @@ export default function Chat() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // After getting a substantial about of errors AI helped me work on this handle submit
+  // to manages form submission, updates message state, calls server action, handles loading and error states
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!input.trim() || loading) return;
